@@ -2,5 +2,5 @@
 exports.getMessagesByRoom = function (roomId) {
 }
 
-exports.addMessage = function addMessage(roomId, userId) {
+exports.addMessage = function addMessage(roomId, content) {
 }

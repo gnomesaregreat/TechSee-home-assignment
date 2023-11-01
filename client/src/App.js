@@ -17,14 +17,10 @@ function App() {
   //For connection scoket.io
   React.useEffect(() => {
     socket = io(CONNECTION_PORT);
-  }, []);
-
-  //for receive message
-  React.useEffect(() => {
-    socket.on("receive_message", (data) => {
-      setMessageList([...messageList, data]);
+    socket.on("msg", (data) => {
+      setMessageList([...messageList, data.value]);
     });
-  });
+  }, []);
 
   //for connection in a room
   const connectToRoom = () => {
