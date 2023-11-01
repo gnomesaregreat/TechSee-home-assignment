@@ -42,7 +42,7 @@ function handleJoinRoom(room, socket) {
 }
 
 async function handleSendMessage(data) {
-    messagesService.addMessage(data.room, data.content)
+    await messagesService.addMessage(data.room, data.content)
     pubSub.publish(data.room, {type: "msg", value: data.content})
 }
 
