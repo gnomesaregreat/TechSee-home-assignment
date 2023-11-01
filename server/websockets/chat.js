@@ -31,7 +31,6 @@ async function handleConnections(socket) {
 }
 
 function subscribe(room, msg) {
-    console.log("room", room, "msg", msg);
     io.to(room).emit(msg.type, msg);
 }
 
